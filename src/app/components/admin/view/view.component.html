@@ -1,4 +1,33 @@
-<div *ngFor="let dress of dresses">
-    <div>{{dress.name}}</div>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
-</div>
+<section class="hero-section">
+    <div class="card-grid">
+        <div class="card" >
+            <div class="card__background"
+                style="background-image: url(https://i.pinimg.com/736x/5f/e1/04/5fe104837d5dafbe5fbf9081851b290d.jpg)">
+               
+            </div>
+            <div class="card__content">
+                <h3 class="card__heading">Men's Clothing</h3>   
+                <button (click)="inToMen()" type="button" class="btn btn-light">Add to Men's Clothing</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__background"
+                style="background-image: url(http://cdn.shopify.com/s/files/1/1509/8876/products/Women-2018-Autumn-Fashion-Casual-Long-Shirt-Workwear-Office-Formal-V-Neck-Top-Striped-Tie-Waist_grande.jpg?v=1571441092)">   
+            </div>
+            <div class="card__content">
+                <h3 class="card__heading">Women's Clothing</h3> 
+                <button (click)="inToWomen()"  type="button" class="btn btn-light">Add to Women's Clothing</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- <h4>
+    Shop our huge selection of Women's clothing! Find the
+    best fashion equipment and buy at best price your Women's clothing products.
+    Fast shipping and secure payment at Dress_inn.
+</h4> -->

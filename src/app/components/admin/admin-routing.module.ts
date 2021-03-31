@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddDressComponent } from './add-dress/add-dress.component';
+import { MenComponent } from './add-dress/men/men.component';
+import { WomenComponent } from './add-dress/women/women.component';
 import { ViewComponent } from './view/view.component';
 
 
 const routes: Routes = [
-  { path: '', component: ViewComponent },
-  { path: 'addDress', component: AddDressComponent }
+  { path: '', component: ViewComponent},
+  { path: 'admin/addDressMen', component:MenComponent},
+  { path: 'admin/addDressWomen', component:WomenComponent}
   
 ];
 

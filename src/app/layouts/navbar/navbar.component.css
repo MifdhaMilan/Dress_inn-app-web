@@ -1,20 +1,14 @@
-a {
-    text-decoration: none;
-    color: white;
+ .navbar{
+     border-radius: 0;
 }
-a:hover, a:active{
-    color: lightgray;
+    
+.log {
+        text-align: right;
+ }
+.collapse{
+  text-align: center;
 }
-.navigation-items{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-mat-toolbar{
-    border-radius: 3px;
-}
-@media(max-width: 959px){
-    mat-toolbar{
-        border-radius: 0px;
-    }
+a:hover{
+  background-color: #2a6973;
+  color: antiquewhite;
 }

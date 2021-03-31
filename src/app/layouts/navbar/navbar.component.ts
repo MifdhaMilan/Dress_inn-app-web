@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { DressService } from 'src/app/services/dress.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,14 +8,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dressService: DressService
+ 
+  ) { }
 
-  @Output() public sidenavToggle = new EventEmitter();
   
   ngOnInit() {
+   
   }
-  public onToggleSidenav = () => {
-    this.sidenavToggle.emit();
-  }
+
 
 }
