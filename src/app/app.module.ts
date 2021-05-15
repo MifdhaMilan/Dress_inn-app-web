@@ -12,11 +12,13 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AdminModule } from './components/admin/admin.module';
 import { UserModule } from './components/user/user.module';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
 
   ],
   imports: [

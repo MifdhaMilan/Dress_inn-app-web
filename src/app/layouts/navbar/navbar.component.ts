@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { DressService } from 'src/app/services/dress.service';
-import { Router } from '@angular/router';
-
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,19 +10,24 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 admin: boolean =false;
 user: boolean = true;
-public href: string = "";
+path: string;
 
 
   constructor(
     private dressService: DressService,
-    private router: Router
+    private Location:Location
  
-  ) { }
+  ) {  
+    this.path = this.Location.path()
+    console.log(this.path);
+    }
+    
+
+   
 
   
   ngOnInit(): void {
-    this.href = this.router.url;
-    console.log(this.href);
+ 
   }
 
 
