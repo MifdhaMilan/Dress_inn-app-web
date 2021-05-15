@@ -6,7 +6,7 @@ import { ViewComponent } from './view/view.component';
 
 
 const routes: Routes = [
-  { path: '', component: ViewComponent},
+  { path: 'admin', component: ViewComponent},
   { path: 'admin/addDressMen', component:MenComponent},
   { path: 'admin/addDressWomen', component:WomenComponent}
   

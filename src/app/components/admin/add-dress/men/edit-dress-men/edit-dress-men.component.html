@@ -1,1 +1,28 @@
-<p>edit-dress-men works!</p>
+
+<form [formGroup]="editDressMenForm" (ngSubmit)="onMenDressSubmit()"  #f="ngForm">
+    <h1 mat-dialog-title>Edit Dress</h1>
+   <img class="img-responsive" width="100px" height="" src="assets/dress_inn-logo.png" >
+    <mat-dialog-content>
+      <mat-form-field class="example-full-width">
+        <input  matInput formControlName="Name" placeholder="Name"  required/>
+        <mat-error>please enter Name</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input  matInput formControlName="Price" placeholder="Price"  required/>
+        <mat-error>Please enter Price</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input  matInput formControlName="ImageUrl" placeholder="Image Url" required/>
+        <mat-error>Please enter Image Url</mat-error>
+      </mat-form-field>
+    </mat-dialog-content>
+    
+    <mat-dialog-actions>
+      <button class="btn btn-danger" mat-raised-button mat-dialog-close>Cancel</button>
+      <button  class="btn btn-outline-info" mat-raised-button (click)="reset()" >Reset</button>
+      <button  class="btn btn-outline-info" mat-raised-button type="submit" [disabled]="!f.valid" >OK</button>
+    </mat-dialog-actions>
+    </form>
+  

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { DressService } from 'src/app/services/dress.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class AddDressWomenComponent implements OnInit {
     public dialogRef: MatDialogRef<AddDressWomenComponent>,
     private fb: FormBuilder, 
     private dressService: DressService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -41,7 +43,12 @@ export class AddDressWomenComponent implements OnInit {
    
     this.createJsonModel();
     console.log(this.model);
-    
+    this.dressService.addDress(this.model).subscribe(next => {
+      this.toastr.success('Dress added successfully');
+    }, error => {
+      this.toastr.error('Dress adding failed');
+ 
+    });
 
   }
 

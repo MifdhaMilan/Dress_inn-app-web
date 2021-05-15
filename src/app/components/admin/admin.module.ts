@@ -4,8 +4,11 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ViewComponent } from './view/view.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule } from "@angular/material";
+import { MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCardModule } from "@angular/material";
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -49,7 +52,11 @@ import { EditDressWomenComponent } from './add-dress/women/edit-dress-women/edit
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    FlexLayoutModule,
+    MatCardModule
   ]
 })
 export class AdminModule { }

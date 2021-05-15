@@ -1,5 +1,29 @@
 <section id="header" class="jumbotron text-center">
     <h1 class="display-3">DRESS_INN</h1>
     <p class="lead">Fashion is the armor to survive the reality of everyday life</p>
-    <button mat-raised-button (click)="openAddDressMenDialog()"  type="button" class="btn btn-light"> Click to add new Men's Cloth</button>
+    <button mat-raised-button (click)="openAddDressMenDialog()" type="button" class="btn btn-light"> Click to add new
+        Men's Cloth</button>
 </section>
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutAlign="start start"  fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let dress of allMenDress" >
+            <mat-card class="mat-elevation-z4" >
+                <mat-card-header>
+                    <mat-card-title>{{dress.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="dress.imageUrl">
+                <mat-card-content>
+                    <h4>{{dress.price}}.00 Rs</h4>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button type="button" class="btn btn-primary btn-circle btn-lg" (click)="editMenDress(dress.id)"><span class="material-icons">edit</span></button>
+                    <button type="button" class="btn btn-danger btn-circle btn-lg" (click)="deleteMenDress(dress.id, dress.name)"><span class="material-icons">delete</span></button>
+                    
+                </mat-card-actions>
+
+            </mat-card>
+        </div>
+
+    </div>
+
+</div>

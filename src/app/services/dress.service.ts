@@ -11,6 +11,8 @@ import { map } from 'rxjs/operators';
 export class DressService {
 
   private apiUrl = environment.apiBaseUrl;
+  dressId: number;
+  dressName:string;
 
 
   constructor(private http : HttpClient) { }
@@ -24,5 +26,26 @@ export class DressService {
         return response;
       }));
   }
+  public setId(id:number){
+this.dressId = id;
+  }
+  public getId(){
+return this.dressId;
+  }
+  public setName(name:string){
+this.dressName = name;
+  }
+public getName(){
+return this.dressName;
+}
+deleteMenDress(id: number) {
+  return this.http.delete(this.apiUrl + '/dress/delete/' + id);
+}
+getDressById(id: number){
+  return this.http.get(this.apiUrl +'/dress/find/'+id);
+}
+editMenDress(model:any){
+  return this.http.put(this.apiUrl +'/dress/update', model);
+}
 
 }

@@ -1,1 +1,6 @@
-<p>delete-dress-men works!</p>
+<h1 mat-dialog-title>Confirm Delete</h1>
+<div mat-dialog-content>Are you sure you want to remove <b>{{name}}</b>?</div>
+<div mat-dialog-actions>
+    <button class="btn btn-outline-info" mat-raised-button mat-dialog-close>Cancel</button>
+        <button class="btn btn-danger" mat-raised-button (click)="onDeleteDress()">Delete</button>  
+</div>
