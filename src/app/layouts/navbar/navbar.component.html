@@ -7,14 +7,14 @@
       <a class="nav-item nav-link" routerLink="/">Home</a>
     </div>
     <div class="navbar-nav ml-auto">
-      <div *ngIf="path === '/admin'">
+      <!-- <div *ngIf="path === '/admin'">
         <a href="#" class="nav-item nav-link">Orders</a>
-      </div>
-      <div *ngIf="path === '/user'">
-        <a href="#" class="nav-item nav-link">
-          <mat-icon>shopping_cart</mat-icon>
+      </div> -->
+      <!-- <div *ngIf="path === '/user'"> -->
+        <a href="/user/cart" class="nav-item nav-link">
+          <mat-icon>shopping_cart</mat-icon><span class="badge badge-light">4</span>
         </a>
-      </div>
+      <!-- </div> -->
     </div>
 
 </nav>

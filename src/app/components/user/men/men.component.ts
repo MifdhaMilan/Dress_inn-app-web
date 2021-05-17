@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
@@ -6,15 +6,22 @@ import { Subscription } from 'rxjs';
 import { Dress } from 'src/app/models/Dress';
 import { DressService } from 'src/app/services/dress.service';
 
+interface Size {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-men',
   templateUrl: './men.component.html',
   styleUrls: ['./men.component.css']
 })
 export class MenComponent implements OnInit {
+  @Input() dress: Dress;
   allMenDress: Dress[] = [];
   mediaSub: Subscription;
   deviceXs: boolean;
+
 
   constructor(
     private dressService: DressService,
@@ -25,6 +32,7 @@ export class MenComponent implements OnInit {
 
   ngOnInit() {
     this.getAllMenDress();
+
   }
 
   getAllMenDress() {
@@ -37,4 +45,13 @@ export class MenComponent implements OnInit {
     });
 
   }
+
+  sizes: Size[] = [
+    {value: 'sm', viewValue: 'Small'},
+    {value: 'md', viewValue: 'Medium'},
+    {value: 'lg', viewValue: 'large'},
+    {value: 'xl', viewValue: 'Extra large'}
+  ];
+
+
 }

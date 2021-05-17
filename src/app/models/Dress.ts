@@ -1,5 +1,5 @@
 export interface Dress {
-    id: number,
+    id: string,
     name: string,
     price: number,
     imageUrl: string,
