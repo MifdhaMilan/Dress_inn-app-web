@@ -21,7 +21,8 @@
                         </mat-select>
                       </mat-form-field>
                       <br />
-                      <button type="button" class="btn btn-outline-success" mat-raised-button>Add to Cart</button>
+                      <button type="button" class="btn btn-outline-success" [ngClass]="this.isAdded[i] ? 'btn-success' : 'btn-outline-secondary'" 
+                      (click)="addToCart($event, dress.id)" mat-raised-button>Add to Cart</button>
                 </mat-card-actions>
 
             </mat-card>
@@ -30,3 +31,4 @@
     </div>
 
 </div>
+<app-cart></app-cart>

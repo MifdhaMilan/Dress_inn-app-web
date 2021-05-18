@@ -1,1 +1,19 @@
-<p>cart works!</p>
+<div class="product-cart" *ngIf="cartItems && cartItems.length > 0">
+    <ul>
+      <li *ngFor="let item of cartItems">
+        <img class="card-img-top" [src]="item.imageUrl" alt="Card image cap">
+        <span class="item">{{item.name}} </span>
+        <span class="item">{{item.price}}.00 Rs</span>
+        <button type="button" class="close" aria-label="Remove Item" (click)="removeItemFromCart(item.id)">
+          <span class="item" aria-hidden="true">&times;</span>
+        </button>        
+      </li>
+    </ul>
+    <div class="cart-total">
+      <p><button type="button" class="btn btn-outline-primary btn-sm" (click)="emptyCart()">Empty Cart</button></p>
+      <p class="text-right">
+        <strong class="d-block">Total:</strong>
+        <span class="d-block">{{totalAmmount}}.00 Rs</span>
+      </p>
+    </div>
+  </div>
