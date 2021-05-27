@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Dress } from 'src/app/models/Dress';
 import { DressService } from 'src/app/services/dress.service';
@@ -19,22 +19,12 @@ export class ViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.getDresses();
-
+  
   }
 
-  // public getDresses(): void{
-  //   this.dressService.getDresses().subscribe(
-  //     (response: Dress[]) => {
-  //       this.dresses = response;
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   );
-  // }
   inToMen() {
     this.router.navigateByUrl('/admin/addDressMen');
+  
 
   }
   inToWomen() {

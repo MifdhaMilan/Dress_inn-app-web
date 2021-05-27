@@ -21,6 +21,7 @@ import { EditDressMenComponent } from './add-dress/men/edit-dress-men/edit-dress
 import { DeleteDressMenComponent } from './add-dress/men/delete-dress-men/delete-dress-men.component';
 import { DeleteDressWomenComponent } from './add-dress/women/delete-dress-women/delete-dress-women.component';
 import { EditDressWomenComponent } from './add-dress/women/edit-dress-women/edit-dress-women.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
@@ -34,7 +35,8 @@ import { EditDressWomenComponent } from './add-dress/women/edit-dress-women/edit
       DeleteDressMenComponent,
       AddDressWomenComponent,
       EditDressWomenComponent,
-      DeleteDressWomenComponent
+      DeleteDressWomenComponent,
+      OrdersComponent
     ],
   entryComponents: [
     AddDressMenComponent,

@@ -1,3 +1,4 @@
+import { ConditionalExpr } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
 import { MatDialog } from '@angular/material';
@@ -7,10 +8,6 @@ import { Dress } from 'src/app/models/Dress';
 import { CartService } from 'src/app/services/cart.service';
 import { DressService } from 'src/app/services/dress.service';
 
-interface Size {
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-men',
@@ -23,6 +20,7 @@ export class MenComponent implements OnInit {
   deviceXs: boolean;
   private singleProduct;
   private isAdded;
+
 
   constructor(
     private dressService: DressService,
@@ -52,7 +50,7 @@ export class MenComponent implements OnInit {
   }
 
   getAllMenDress() {
-    this.dressService.getDresses().subscribe(data => {
+    this.dressService.getMenDresses().subscribe(data => {
       this.allMenDress = data;
       console.log(this.allMenDress);
     }, error => {
@@ -62,20 +60,14 @@ export class MenComponent implements OnInit {
 
   }
 
-  sizes: Size[] = [
-    {value: 'sm', viewValue: 'Small'},
-    {value: 'md', viewValue: 'Medium'},
-    {value: 'lg', viewValue: 'large'},
-    {value: 'xl', viewValue: 'Extra large'}
-  ];
 
   addToCart(event, productId) {
     
     // If Item is already added then display alert message
-    if (event.target.classList.contains('btn-success')) {
-      alert('This product is already added into cart.');
-      return false;
-    }
+    // if (event.target.classList.contains('btn-success')) {
+    //   alert('This product is already added into cart.');
+    //   return false;
+    // }
 
     // Change button color to green
     this.allMenDress.map((item, index) => {
@@ -86,6 +78,7 @@ export class MenComponent implements OnInit {
 
     this.singleProduct = this.allMenDress.filter(product => {
       return product.id === productId;
+      
     });
 
     // this.cartItems.push(this.singleProduct[0]);

@@ -10,19 +10,8 @@
                     <h4>{{dress.price}}.00 Rs</h4>
                 </mat-card-content>
                 <mat-card-actions>
-                    <!-- <button type="button" class="btn btn-primary btn-circle btn-lg" (click)="editMenDress(dress.id)"><span class="material-icons">edit</span></button>
-                    <button type="button" class="btn btn-danger btn-circle btn-lg" (click)="deleteMenDress(dress.id, dress.name)"><span class="material-icons">delete</span></button> -->
-                    <mat-form-field appearance="fill">
-                        <mat-label>Select Size</mat-label>
-                        <mat-select>
-                          <mat-option *ngFor="let size of sizes" [value]="size.value">
-                            {{size.viewValue}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                      <br />
                       <button type="button" class="btn btn-outline-success" [ngClass]="this.isAdded[i] ? 'btn-success' : 'btn-outline-secondary'" 
-                      (click)="addToCart($event, dress.id)" mat-raised-button>Add to Cart</button>
+                      (click)="addToCart($event, dress.id )" mat-raised-button>Add to Cart</button>
                 </mat-card-actions>
 
             </mat-card>

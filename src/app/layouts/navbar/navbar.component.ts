@@ -28,6 +28,7 @@ private cartProductCount: number = 0;
     this.cart.getProducts().subscribe(data => {
       this.cartProductCount = data.length;
     })
+    
   }
 
 

@@ -39,7 +39,6 @@ export class AddDressMenComponent implements OnInit {
 
   }
   onMenDressSubmit(){
-   
     this.createJsonModel();
     console.log(this.model);
     this.dressService.addDress(this.model).subscribe(next => {
@@ -56,6 +55,8 @@ export class AddDressMenComponent implements OnInit {
     this.model.name = this.addDressMenForm.get('Name').value;
     this.model.price = this.addDressMenForm.get('Price').value;
     this.model.imageUrl = this.addDressMenForm.get('ImageUrl').value;
+    this.model.type = "M";
+    this.model.status = "Available";
     
   }
   

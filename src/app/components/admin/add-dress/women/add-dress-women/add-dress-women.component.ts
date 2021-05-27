@@ -56,7 +56,8 @@ export class AddDressWomenComponent implements OnInit {
     this.model.name = this.addDressWomenForm.get('Name').value;
     this.model.price = this.addDressWomenForm.get('Price').value;
     this.model.imageUrl = this.addDressWomenForm.get('ImageUrl').value;
-    
+    this.model.type = "W";
+    this.model.status = "Available";
   }
 
 }

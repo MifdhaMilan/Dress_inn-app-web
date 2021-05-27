@@ -1,0 +1,18 @@
+
+  <div class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Image</div>
+        <div class="col col-2">Name</div>
+        <div class="col col-3">Price</div>
+        <div class="col col-4">Ship</div>
+      </li>
+      <li class="table-row" *ngFor="let dress of OrderedDress">  
+        <div class="col col-1" data-label="Job Id"><img class="card-img-top" [src]="dress.imageUrl" alt="Card image cap"></div>
+        <div class="col col-2" data-label="Customer Name">{{dress.name}}</div>
+        <div class="col col-3" data-label="Amount">{{dress.price}}.00 Rs</div>
+        <div class="col col-4" data-label="Payment Status"><button type="button" (click)="acceptOrder(dress.id)" class="btn btn-primary" mat-raised-button>Accept</button></div>
+      </li>
+      
+    </ul>
+  </div>

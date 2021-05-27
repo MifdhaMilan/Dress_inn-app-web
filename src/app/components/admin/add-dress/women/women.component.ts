@@ -30,7 +30,7 @@ export class WomenComponent implements OnInit {
   }
 
   getAllWomenDress() {
-    this.dressService.getDresses().subscribe(data => {
+    this.dressService.getWomenDresses().subscribe(data => {
       this.allWomenDress = data;
       console.log(this.allWomenDress);
     }, error => {

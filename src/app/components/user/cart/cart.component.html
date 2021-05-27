@@ -9,11 +9,14 @@
         </button>        
       </li>
     </ul>
+
     <div class="cart-total">
-      <p><button type="button" class="btn btn-outline-primary btn-sm" (click)="emptyCart()">Empty Cart</button></p>
-      <p class="text-right">
-        <strong class="d-block">Total:</strong>
-        <span class="d-block">{{totalAmmount}}.00 Rs</span>
-      </p>
+        <p></p>
+        <p class="text-right">
+            <strong class="d-block">Total:</strong>
+            <span class="d-block">{{totalAmmount}}.00 Rs</span>
+        </p>   
     </div>
-  </div>
+    <button type="button" class="btn btn-danger" (click)="emptyCart()">Empty Cart</button>
+        <button type="button" class="btn btn-primary" (click)="checkout()" mat-raised-button>checkout</button>
+</div>

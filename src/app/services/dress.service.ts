@@ -20,6 +20,12 @@ export class DressService {
   public getDresses(): Observable<Dress[]>{
     return this.http.get<Dress[]>(this.apiUrl +'/dress/all');
   }
+  public getMenDresses(): Observable<Dress[]>{
+    return this.http.get<Dress[]>(this.apiUrl +'/dress/Men');
+  }
+  public getWomenDresses(): Observable<Dress[]>{
+    return this.http.get<Dress[]>(this.apiUrl +'/dress/Women');
+  }
   public addDress(model: any) {
     return this.http.post(this.apiUrl  + '/dress/add', model)
       .pipe(map((response: any) => {
@@ -47,5 +53,13 @@ getDressById(id: number){
 editMenDress(model:any){
   return this.http.put(this.apiUrl +'/dress/update', model);
 }
-
+orderDress(id: any){
+  return this.http.put(this.apiUrl +'/dress/order', id);
+}
+getOrderedDress(){
+  return this.http.get(this.apiUrl +'/dress/OrderedDress');
+}
+acceptOrderDress(id: number){
+  return this.http.put(this.apiUrl +'/dress/acceptorder', id);
+}
 }

@@ -34,7 +34,7 @@ export class MenComponent implements OnInit{
   }
 
   getAllMenDress() {
-    this.dressService.getDresses().subscribe(data => {
+    this.dressService.getMenDresses().subscribe(data => {
       this.allMenDress = data;
       console.log(this.allMenDress);
     }, error => {

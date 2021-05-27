@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/cart.service';
+import { DressService } from 'src/app/services/dress.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,9 +11,12 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   private cartItems;
   private totalAmmount;
+  id: any = [];
 
   constructor(
-    private cart: CartService
+    private cart: CartService,
+    private toastr: ToastrService,
+    private dressService: DressService
   ) { }
 
   ngOnInit() {
@@ -21,16 +26,8 @@ console.log(this.cartItems)
       this.totalAmmount = this.cart.getTotalPrice();
     });
   }
-  // Remove item from cart list
+
   removeItemFromCart(productId) {
-    /* this.cartItems.map((item, index) => {
-      if (item.id === productId) {
-        this.cartItems.splice(index, 1);
-      }
-    });
-
-    this.mySharedService.setProducts(this.cartItems); */
-
     this.cart.removeProductFromCart(productId);
 
   }
@@ -38,4 +35,16 @@ console.log(this.cartItems)
   emptyCart() {
     this.cart.emptryCart();
   }
+  checkout(){
+    for(let i=0;i<this.cartItems.length ; i++){
+      this.id.push(this.cartItems[i].id);
+    }
+    console.log(this.id);
+    this.dressService.orderDress(this.id).subscribe(next => {
+      this.toastr.success('The odered items will be shipped soon! thank you for purchasing from Dress_inn');
+    }, error => {
+      this.toastr.error('Order Invalid. Please try again!');
+    });
+  }
+
 }

@@ -17,10 +17,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   inToAdmin(){
-
-    this.router.navigateByUrl('/admin');
+    this.router.navigate(['/admin'])
+    .then(() => {
+      window.location.reload();
+    });
+    // this.router.navigateByUrl('/admin');
   }
   inToUser(){
-    this.router.navigateByUrl('/user');
+    this.router.navigate(['/user'])
+    .then(() => {
+      window.location.reload();
+    });
+    // this.router.navigateByUrl('/user');
   }
 }

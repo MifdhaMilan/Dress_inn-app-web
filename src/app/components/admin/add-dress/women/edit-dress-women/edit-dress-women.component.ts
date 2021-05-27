@@ -61,9 +61,12 @@ export class EditDressWomenComponent implements OnInit {
   }
 
   createJsonModel() {
+    this.model.id = this.id;
     this.model.name = this.editDressWomenForm.get('Name').value;
     this.model.price = this.editDressWomenForm.get('Price').value;
     this.model.imageUrl = this.editDressWomenForm.get('ImageUrl').value;
+    this.model.type = "W";
+    this.model.status = "Available";
   }
 
 
